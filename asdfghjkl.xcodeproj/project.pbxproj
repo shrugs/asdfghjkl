@@ -11,6 +11,9 @@
 		C935D02B1B9AC16400D8E9AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C935D02A1B9AC16400D8E9AC /* Images.xcassets */; };
 		C935D02E1B9AC16400D8E9AC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C935D02C1B9AC16400D8E9AC /* MainMenu.xib */; };
 		C935D03A1B9AC16400D8E9AC /* asdfghjklTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935D0391B9AC16400D8E9AC /* asdfghjklTests.swift */; };
+		C935D0441B9AC1C700D8E9AC /* bat27.png in Resources */ = {isa = PBXBuildFile; fileRef = C935D0431B9AC1C700D8E9AC /* bat27.png */; };
+		C95632251B9C1C24003F8DE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95632241B9C1C24003F8DE3 /* CoreGraphics.framework */; };
+		C95632281B9C1C5F003F8DE3 /* ScrollUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C95632271B9C1C5F003F8DE3 /* ScrollUtils.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,11 @@
 		C935D0331B9AC16400D8E9AC /* asdfghjklTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = asdfghjklTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935D0381B9AC16400D8E9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C935D0391B9AC16400D8E9AC /* asdfghjklTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asdfghjklTests.swift; sourceTree = "<group>"; };
+		C935D0431B9AC1C700D8E9AC /* bat27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bat27.png; sourceTree = "<group>"; };
+		C95632211B9C1B4F003F8DE3 /* asdfghjkl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "asdfghjkl-Bridging-Header.h"; sourceTree = "<group>"; };
+		C95632241B9C1C24003F8DE3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C95632261B9C1C5F003F8DE3 /* ScrollUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollUtils.h; sourceTree = "<group>"; };
+		C95632271B9C1C5F003F8DE3 /* ScrollUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95632251B9C1C24003F8DE3 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +64,7 @@
 		C935D01A1B9AC16400D8E9AC = {
 			isa = PBXGroup;
 			children = (
+				C95632241B9C1C24003F8DE3 /* CoreGraphics.framework */,
 				C935D0251B9AC16400D8E9AC /* asdfghjkl */,
 				C935D0361B9AC16400D8E9AC /* asdfghjklTests */,
 				C935D0241B9AC16400D8E9AC /* Products */,
@@ -77,6 +87,9 @@
 				C935D02A1B9AC16400D8E9AC /* Images.xcassets */,
 				C935D02C1B9AC16400D8E9AC /* MainMenu.xib */,
 				C935D0261B9AC16400D8E9AC /* Supporting Files */,
+				C95632211B9C1B4F003F8DE3 /* asdfghjkl-Bridging-Header.h */,
+				C95632261B9C1C5F003F8DE3 /* ScrollUtils.h */,
+				C95632271B9C1C5F003F8DE3 /* ScrollUtils.m */,
 			);
 			path = asdfghjkl;
 			sourceTree = "<group>";
@@ -84,6 +97,7 @@
 		C935D0261B9AC16400D8E9AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C935D0431B9AC1C700D8E9AC /* bat27.png */,
 				C935D0271B9AC16400D8E9AC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -150,7 +164,9 @@
 		C935D01B1B9AC16400D8E9AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = mattc;
 				TargetAttributes = {
 					C935D0221B9AC16400D8E9AC = {
@@ -186,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C935D0441B9AC1C700D8E9AC /* bat27.png in Resources */,
 				C935D02B1B9AC16400D8E9AC /* Images.xcassets in Resources */,
 				C935D02E1B9AC16400D8E9AC /* MainMenu.xib in Resources */,
 			);
@@ -205,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95632281B9C1C5F003F8DE3 /* ScrollUtils.m in Sources */,
 				C935D0291B9AC16400D8E9AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +278,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -323,10 +342,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = asdfghjkl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mat.tc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "asdfghjkl/asdfghjkl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -334,10 +357,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = asdfghjkl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mat.tc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "asdfghjkl/asdfghjkl-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -356,6 +382,7 @@
 				);
 				INFOPLIST_FILE = asdfghjklTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mat.tc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/asdfghjkl.app/Contents/MacOS/asdfghjkl";
 			};
@@ -372,6 +399,7 @@
 				);
 				INFOPLIST_FILE = asdfghjklTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mat.tc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/asdfghjkl.app/Contents/MacOS/asdfghjkl";
 			};
@@ -396,6 +424,7 @@
 				C935D03F1B9AC16400D8E9AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C935D0401B9AC16400D8E9AC /* Build configuration list for PBXNativeTarget "asdfghjklTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +433,7 @@
 				C935D0421B9AC16400D8E9AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
