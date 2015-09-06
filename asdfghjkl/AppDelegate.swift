@@ -85,20 +85,25 @@ var wasDragging : Bool = false
 var setOfHeldButtons = NSMutableSet()
 var setOfPreviouslyHeldButtons = NSSet()
 var hasPotentialScroll = false
+var isScrolling = false
 var scrollTimer : NSTimer?
 var scrollUp = false
 
 var interpTimer : NSTimer?
 let steps : Double = 15.0
 
-let arbitraryLinearScalar = 0.2
+var delayedMoveTimer : NSTimer?
+
+let scrollDelay = 0.2
 
 class Whatever : NSObject {
-  func timerFinished() {
+  func touchingFinished() {
     keyDepressTimer?.invalidate()
     keyDepressTimer = nil
     lastKeyCode = nil
     timeOfLastKeypress = nil
+    delayedMoveTimer?.invalidate()
+    delayedMoveTimer = nil
   }
 
   func lClick() {
@@ -112,6 +117,7 @@ class Whatever : NSObject {
   func noMoreScrollPls() {
     // do the scroll
     hasPotentialScroll = false
+    isScrolling = false
   }
 
   func interpTimerCallback(timer : NSTimer) {
@@ -146,6 +152,11 @@ class Whatever : NSObject {
       "fromX": fromX,
       "fromY": fromY
       ], repeats: false)
+  }
+
+  func delayedMoveTimerCallback(timer : NSTimer) {
+    let p = timer.userInfo as! [Int]
+    smoothMoveMouse(by: p)
   }
 }
 
@@ -195,14 +206,23 @@ func modifyValue(v : Double, forTime time : Double) -> Double {
 
 func onKeyDown(keyCode : Int64) {
 
+  var dt = 0.0
+  if let tl = timeOfLastKeypress {
+    dt = NSDate().timeIntervalSinceDate(tl)
+  }
+  timeOfLastKeypress = NSDate()
+
+  keyUpTimer?.invalidate()
+  keyUpTimer = nil
+
   setOfHeldButtons.addObject(NSNumber(longLong: keyCode))
 
   // DRAGGING AND CLICKING
   if keyDepressTimer !== nil {
 
     if !hasPotentialScroll {
-      // first time
-      if setOfHeldButtons.count == 2 {
+      // two buttons held within a short time of each other
+      if setOfHeldButtons.count == 2 && dt < scrollDelay {
         // beginning of scroll gesture
         setOfPreviouslyHeldButtons = setOfHeldButtons.copy() as! NSSet
         hasPotentialScroll = true
@@ -210,11 +230,14 @@ func onKeyDown(keyCode : Int64) {
         return
       }
     } else {
-      // n'th time
-      if (setOfHeldButtons.count == 2) {
+      // n'th time and buttons close together again
+      if setOfHeldButtons.count == 2 && dt < scrollDelay {
         let held = NSMutableSet(set: setOfHeldButtons)
         held.unionSet(setOfPreviouslyHeldButtons as Set<NSObject>)
         if held.count >= 4 {
+
+          delayedMoveTimer?.invalidate()
+
           // if none of the items are the same
           let prevKeyCode : Int64! = setOfPreviouslyHeldButtons.anyObject()?.longLongValue
           let currentKeyCode : Int64! = setOfHeldButtons.anyObject()?.longLongValue
@@ -227,6 +250,8 @@ func onKeyDown(keyCode : Int64) {
           if (diff != 0) {
             let direction = diff > 0
             scroll(direction: direction)
+            isScrolling = true
+            return
           }
 
           setOfPreviouslyHeldButtons = setOfHeldButtons.copy() as! NSSet
@@ -235,18 +260,24 @@ func onKeyDown(keyCode : Int64) {
       }
     }
 
-    // nth press in a row
-    keyUpTimer?.invalidate()
-    keyUpTimer = nil
+    if isScrolling { return }
+
     let d = distanceFromLast(keyCode)
-    let dt = NSDate().timeIntervalSinceDate(timeOfLastKeypress!)
-    print(dt)
     let nd = [
       Int(modifyValue(Double(d[0]), forTime: dt)),
       Int(modifyValue(Double(d[1]), forTime: dt))
     ]
-    smoothMoveMouse(by: nd)
-    wasDragging = true
+
+    if hasPotentialScroll && setOfHeldButtons.count == 1 {
+      // possibly have to wait for a near second press that indicates scrolling
+      print("waiting to see if scrolling...")
+      delayedMoveTimer = NSTimer.scheduledTimerWithTimeInterval(scrollDelay + 0.01, target: whatever, selector: "delayedMoveTimerCallback:", userInfo: nd, repeats: false)
+    } else {
+      // nth press in a row
+      print("moving right away")
+      smoothMoveMouse(by: nd)
+      wasDragging = true
+    }
   } else {
     // first time
     wasDragging = false
@@ -254,18 +285,16 @@ func onKeyDown(keyCode : Int64) {
   lastKeyCode = keyCode
 
   keyDepressTimer?.invalidate()
-  keyDepressTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: whatever, selector: "timerFinished", userInfo: nil, repeats: false)
-  timeOfLastKeypress = NSDate()
+  keyDepressTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: whatever, selector: "touchingFinished", userInfo: nil, repeats: false)
 }
 
 func onKeyUp(keyCode : Int64) {
-//  let keysStillDown
   setOfHeldButtons.removeObject(NSNumber(longLong: keyCode))
   if (setOfHeldButtons.count == 0) {
     scrollTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: whatever, selector: "noMoreScrollPls", userInfo: nil, repeats: false)
   }
 
-  if (!wasDragging) {
+  if (!wasDragging && !isScrolling) {
     // if we're not dragging, we care about clicks
     // just in case, create a timer that's invalidated if the user clicks down before the timeout
     keyUpTimer?.invalidate()

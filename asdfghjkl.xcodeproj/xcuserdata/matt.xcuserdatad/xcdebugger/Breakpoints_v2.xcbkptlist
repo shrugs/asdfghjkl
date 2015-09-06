@@ -20,28 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "timerFinished()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225487.378159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "timerFinished()"
+            landmarkName = "touchingFinished()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -52,11 +36,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225743.067393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "lClick()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "asdfghjkl/AppDelegate.swift"
+            timestampString = "463225487.378159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "interpTimerCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225546.903453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "onKeyDown(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,12 +84,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225743.067393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "leftDrag(to:)"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "rightDown()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225487.378159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "interpTimerCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,12 +116,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225743.067393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "rightDown()"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "rightClick()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -132,12 +132,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225743.067393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "rightDown()"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "rightClick()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -162,11 +162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "asdfghjkl/AppDelegate.swift"
-            timestampString = "463224369.349314"
+            timestampString = "463225487.378159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "interpTimerCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
