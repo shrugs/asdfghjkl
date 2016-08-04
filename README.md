@@ -14,8 +14,6 @@ Throughout history, we've invented better and better ways of interfacing with ma
 
 Introducing **asdfghjkl** , a revolution in computer-human interface design patterns, by team "Keyboard as Trackpad".
 
-[http://asdfghjkl.co](http://www.asdfghjkl.co)
-
 ## What it does
 
 Hold down the _Control_ key and run your finger across the keyboard. Watch as the mouse follows your commands. Marvel at the time you saved.
